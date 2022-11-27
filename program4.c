@@ -1,6 +1,9 @@
 /*
-Napisz program, który wczyta z klawiatury liczbę całkowitą n, a następnie wyświetli na ekranie trójkąt o wysokości n według poniższego schematu. Funkcja scanf("%d", &n) pobierająca liczbę powinna być zawarta w pętli do ... while, która będzie się wykonywała, dopóki wpisana liczba nie będzie poprawna (tj. nie może być ujemna). Przykład działania programu:
-      Podaj wysokosc: 4
+Napisz program, który wczyta z klawiatury liczbę całkowitą n, a
+następnie wyświetli na ekranie trójkąt o wysokości n według poniższego schematu. Funkcja scanf("%d", &n) 
+pobierająca liczbę powinna być zawarta w pętli do ... while, która będzie się wykonywała, dopóki wpisana 
+liczba nie będzie poprawna (tj. nie może być ujemna). Przykład działania programu:
+Podaj wysokosc: 4
          *
         ***
        *****
