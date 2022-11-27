@@ -1,3 +1,11 @@
+/*
+Zadanie:
+-Przeanalizuj zamieszczony poniżej kod źródłowy. Co spodziewasz się zobaczyć na ekranie po wyko
+-Zapisz program na dysku, skompiluj go i uruchom. Czy efekt wykonania jest zgodny z Twoimi wcześniejszymi przypuszczeniami? Jeśli nie - dlaczego?
+-Popraw program tak, aby obie pętle powodowały wyświetlenie odpowiedniego napisu, gdy w zmiennej znajduje się liczba 2. Przydatna może być funkcja fabs()
+-Pamiętaj, żeby liczb zmiennoprzecinkowych nigdy nie porównywać przy pomocy operatora "=="!naniu pierwszej pętli for, a co po drugiej?
+*/
+
 #include <stdio.h>
 #include <math.h> 
 
