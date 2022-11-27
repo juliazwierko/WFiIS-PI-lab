@@ -4,14 +4,6 @@
 int main(void)
 {
 
-    // int password;
-    // printf("Test danych wejsciowych:\n");
-    // printf("Entere your password: \n");
-    // scanf("%d", &password);
-    // printf("my Daaaarling, you were hacked, your password is: %d\n\n",password);
-
-/////////////////////////////////////////////////////////////////////////
-
     int n;
     do 
     {
@@ -31,15 +23,7 @@ int main(void)
         for(int j=0; j<((i*2)+1); j++)
             printf("*");
 
-        
-            
-        
-        
-
-        
         printf("\n");
     }
-    
-
     return 0;
 }
