@@ -1,3 +1,9 @@
+/*
+Napisz program, który wypisze, ile elementów szeregu 1/1+1/2+1/3+...+1/n trzeba zsumować, aby suma przekroczyła wartość 10.
+Proszę wypisać tę liczbę oraz sumę z dokładnością do 10 cyfr po przecinku:
+Suma 12367 elementow = 10.0000430083
+*/
+
 #include <stdio.h>
 #include <math.h> 
 
