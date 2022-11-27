@@ -13,13 +13,12 @@ int main(void)
           {
            printf("liczba-dzelnik:ta\n",i);
           }
-       }
-    
+        }
     printf("Koniec Zadania numer 1.\n\n");
 
        
-       
-       //Rozwiazanie jezeli liczba pierwsza 
+   
+    //Rozwiazanie jezeli liczba pierwsza 
 
     int b = 101;
     printf("Zadana liczba:%d\n",b);
@@ -31,24 +30,14 @@ int main(void)
        {
         printf("liczba-dzelnik: %d\n",j);
        }
-
-
     }
-       
+       if (b/b == 1)
+       {
+        if (b/1 == b)
+        printf("liczba jest pierwsza\n\n");
+       }
 
-          if (b/b == 1)
-          {
-           if (b/1 == b)
-           printf("liczba jest pierwsza\n\n");
-          }
-
-          
-          
-       
-    
-    printf("Koniec Zadania.");
-    
-    
-
+       printf("Koniec Zadania.");
+  
     return 0;
 }
