@@ -18,22 +18,20 @@ int main(void)
     printf("Podana literka: %c\n",b);
 
     int n=4;
-
     for(int i=0; i<n; i++)
     {
         for(int j=0; j<n-i-1; j++)
-            printf(" ");  
+        printf(" ");  
 
         for(int j=0; j<i+1; j++)
-            printf("%c",b-j);
+        printf("%c",b-j);
 
 
         for(int j=i-1; j>=0; j--)
-            printf("%c",b+j);
+        printf("%c",b+j);
        
         printf("\n");
     }
-  
     return 0;
 }
 
