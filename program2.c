@@ -7,10 +7,6 @@ Przykład uruchomienia programu z liczbą pierwszą:
       Podaj liczbe: 101
       Dzielniki: 101
       Liczba 101 jest pierwsza.
-      
-UWAGA!!!
-Ten kod nie jest kompletnym rozwiązaniem zadania, a jedynie pokazuje logikę rozwiązania na określonych liczbach. 
-Aby rozwiązać zadanie do końca, użyj zmiennych typu całkowego.
 */
 
 #include <stdio.h>
@@ -18,41 +14,24 @@ Aby rozwiązać zadanie do końca, użyj zmiennych typu całkowego.
 
 int main(void)
 {
-   int a = 100;
-   printf("Zadana liczba:%d\n",a);
-    
-   int i;
-   for (i = 1; i<101; i++)
-       {
-          if ( (a%i) == 0  )
-          {
-           printf("liczba-dzelnik:ta\n",i);
-          }
-        }
-    printf("Koniec Zadania numer 1.\n\n");
+         int b;
+         printf("podaj liczbe:");
+         scanf("%d", &b);
+         printf("liczba: %d\n",b);
 
-       
-   
-    //Rozwiazanie jezeli liczba pierwsza 
+         int j=0;
+         int i;
+         for (i = 1; i<b+1; i++)
+            {
+                  if ((b%i) == 0) 
+                  {
+                        printf("liczba-dzelnik: %d\n",i);
+                        j+=1;
+                  }
+            }
+         if(j==2)
+         printf("Liczba jest pierwsa\n");
+         printf("Koniec Zadania.");
 
-    int b = 101;
-    printf("Zadana liczba:%d\n",b);
-      
-    int j;
-    for (j = 1; j<102; j++)
-    {
-       if (b%j==0)
-       {
-        printf("liczba-dzelnik: %d\n",j);
-       }
-    }
-       if (b/b == 1)
-       {
-        if (b/1 == b)
-        printf("liczba jest pierwsza\n\n");
-       }
-
-       printf("Koniec Zadania.");
-  
     return 0;
 }
