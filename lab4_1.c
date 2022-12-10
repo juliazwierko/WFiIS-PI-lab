@@ -19,15 +19,16 @@ Funkcja f1: wywolanie nr 5.
 #include <math.h>
 
 void funkcja(int i) {
-    for (int i = 1; i<6; i++){
-        
-        printf("Funkcja f1: wywyolanie nr %d\n", i);
+    printf("Wpisz liczbe wywolan: ");
+    scanf("%d", &i);
+    for (int j = 1; j<=i; j++){ 
+        printf("Funkcja f1: wywyolanie nr %d\n", j);
     }
 }
 
 int main( ){
     printf("\n");
-    
+
     funkcja(5);
 
     printf("\n");
