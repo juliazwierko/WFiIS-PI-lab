@@ -17,22 +17,18 @@ Wynik: 268.150000
 #include <math.h>
 
 float dodawanie(float a, float b){
-    //printf("%f + %f = %.6f", a, b , (a+b));
     return (a+b);
 }
 
 float odejmowanie(float a, float b){
-    //printf("%f - %f = %.6f", a, b , (a-b));
     return (a-b);
 }
 
 float iloczyn(float a, float b){
-    //printf("%f * %f = %.6f", a, b , (a*b));
     return (a*b);
 }
 
 float dzielenie(float a, float b){
-    //printf("%f / %f = %.6f", a, b , (a/b));
     return (a/b);
 }
 
