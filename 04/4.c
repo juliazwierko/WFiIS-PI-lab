@@ -65,7 +65,7 @@ void hex(int p){
     //wypisywanie w systemie 16:
     int i = p;
     char znak;
-            for(int j=2; j>=0;j--){            //wypelnienie tanbeli z numerem elementa "j"
+            for(int j=2; j>=0;j--){           
                 int tmp = i;
                 int reszta = i%16;
                 i = i/16;
@@ -80,7 +80,7 @@ void hex(int p){
                 tab[j]=znak;
             }
 
-    tab[3]='\0';                               //lancuchi
+    tab[3]='\0';                               
     printf("%4d = %s\n", p, tab); 
 } 
 
