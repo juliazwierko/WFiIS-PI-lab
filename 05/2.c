@@ -1,4 +1,4 @@
-//*
+/*
 Podany niżej program wczytuje liczbę całkowitą podaną przez użytkownika.
       #include <stdio.h>
       int main(void){
@@ -30,4 +30,4 @@ Przykład uruchomienia programu:
   > Zwracam Fib(0)
   > Zwracam Fib(1)
   Fib(5) = 5
-*//
+*/
