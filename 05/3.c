@@ -1,4 +1,4 @@
-//*
+/*
 Skopiuj program z poprzedniego zadania i zoptymalizuj go: w funkcji rekurencyjnej
 utwórz lokalną tablicę, w której będą przechowywane obliczone wartości elementów 
 ciągu, tzn. Fk = tab[k]. Początkowo: tab[0] = 0, tab[1] = 1. Zmodyfikuj funkcję 
@@ -16,4 +16,4 @@ Uwaga: nie można używać zmiennych globalnych! Przykład uruchomienia programu
       > Zwracam Fib(2)
       > Zwracam Fib(3)
       Fib(5) = 5
-*//
+*/
