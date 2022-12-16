@@ -7,7 +7,48 @@ która przy użyciu operatorów bitowych oraz odpowiedniej maski ustawi na 1 bit
       Przed wywolaniem funkcji: a = 41
       Po wywolaniu funkcji: a = 47
 */
+#include <stdio.h> 
+#include <math.h> 
+#include <stdlib.h> 
+#include <time.h>
+
+void ustaw(int *a, int b)
+{
+    if (b <= 0)
+    {
+        return;
+    }
+    *a = *a | ((1 << b) - 1); //bitwise or
+    
+}
+
+int main()
+{
+    int a = 0;
+    int b = 0;
+
+    printf("Podaj a: \n");
+    scanf("%d", &a);
+
+    printf("Podaj b: \n");
+    scanf("%d", &b);
+
+    ustaw(&a, b);
+
+    printf("Po zmianie: %d\n", a);
+
+    return 0;
+}
+
+
+//jakes bardzo dlugie i za bardzo madre rozwiazanie
+/*
 void ustaw(int *pa, int b) {
+
+    if(b<=0){
+        return;
+    }
+
     //chce uutworzyc z liczby zapisanej w systemie 10 liczbu zapisana w systemie 2, gdzie kazdy element bedzie wpisan do tabeli
     //wiliczenie ilości elementow tabeli;
     int n = 0;
@@ -63,4 +104,5 @@ int main() {
     void ustaw(*pa,b);
 
     return 0; 
-} 
+}
+*/
