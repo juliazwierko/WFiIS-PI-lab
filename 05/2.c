@@ -41,7 +41,8 @@ int main(void)
     printf("Podaj liczbe: ");
     scanf("%d", &k);
     if(k>=0){
-    /* TUTAJ DO ZMIENNEJ f NALEZY PRZYPISAC WARTOSC k-tego ELEMENTU CIAGU FIBONACCIEGO ZWROCONA PRZEZ FUNKCJE */
+    /* TUTAJ DO ZMIENNEJ f NALEZY PRZYPISAC WARTOSC k-tego 
+    ELEMENTU CIAGU FIBONACCIEGO ZWROCONA PRZEZ FUNKCJE */
     f=Fib(k);
     }
     printf("Fib(%d) = %d\n", k, f);
