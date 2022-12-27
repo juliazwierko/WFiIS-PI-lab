@@ -12,17 +12,16 @@ Przykładowy efekt uruchomienia programu:
       Wylosowano: 1100
       Wylosowana liczba binarna w U1 ma wartosc dziesietna: -3
 */
+
 #include <stdio.h> 
 #include <stdlib.h>
 #include <time.h> 
 #include <math.h>
 
-/*
 void losuj(char *t, int n)
 {
     return;
 }
-*/
 
 void pisz(char *tab)
 {
