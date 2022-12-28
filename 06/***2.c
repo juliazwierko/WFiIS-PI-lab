@@ -1,6 +1,6 @@
 //Zadanie 2// 
 /*
-n t s d le vf sl yw br cw di cs n wystepuje w tablicy tylko raz.
+n t s d l e v f s l y w b r c w d i c s n 
 t wystepuje w tablicy tylko raz.    
 e wystepuje w tablicy tylko raz.
 v wystepuje w tablicy tylko raz.
@@ -26,17 +26,31 @@ int main ()
         literka[i] = rand()%26+'a';
         printf("%c ", literka[i]);
     }
+
+    printf("\n");
     
-    for (int i = 0; i < N; i++) 
+    for(int i = 0; i<N; i++)
     {
-        for(int j = i+1; j < N; j++)
+        int flag = 1; // 1-true; 0-false;
+        for(int j=0; j<N; j++)
         {
+            if(i == j)
+            {
+                continue;
+            }
+            
             if(literka[i] == literka[j])
             {
-                printf("%c powtorzanie\n", literka[i]);
+                flag = 0;
+                break;
             }
+            }
+        if (flag == 1)
+        {
+            printf("%c - wystepuje w tablicy tylko raz.\n", literka[i]);
         }
     }
+    printf("\n");
 
-  return 0;
+    return 0;
 }
