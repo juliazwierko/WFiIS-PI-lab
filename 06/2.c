@@ -1,4 +1,3 @@
-//Zadanie 2// 
 /*
 n t s d l e v f s l y w b r c w d i c s n 
 t wystepuje w tablicy tylko raz.    
