@@ -1,4 +1,3 @@
-//Zadanie 3// 
 /*
     Napisz program, który znajduje wskaźnik do najmniejszego elementu tablicy dziesięciu losowych liczb 
     całkowitych z zakresu [0, 100] (instrukcja rand()%101). W tym programie nie można deklarować innych 
@@ -10,7 +9,7 @@
     90, adres: 0x7ffdfe793768
     55, adres: 0x7ffdfe79376c
     66, adres: 0x7ffdfe793770
-    22, adres: 0x7ffdfe793774 //
+    22, adres: 0x7ffdfe793774 
     47, adres: 0x7ffdfe793778
     42, adres: 0x7ffdfe79377c
     67, adres: 0x7ffdfe793780
