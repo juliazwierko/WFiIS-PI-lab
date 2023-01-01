@@ -22,16 +22,21 @@
  
 #define N 5
  
+int i_rand(int min, int max) 
+{
+  return rand() % (max - min + 1) + min; 
+} 
+
 int main()
 {
-    int a[N];
+    int a[N] = {0};
     int i = 0, j = 0;
     int max, min;
     
     for( ; i < N; i++)
     {
-        printf("Введите A%d..\n", i + 1);
-        scanf("%d", &a[i]);
+        a[i] = i_rand(0, 100);
+        printf("tab[%d] - %d\n", i, a[i]);
     }
     
     a[0] += a[N-1];
