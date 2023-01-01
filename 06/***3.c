@@ -19,51 +19,37 @@
 #include <stdio.h> 
 #include <stdlib.h>
 #include <time.h> 
-
-#define ROZMIAR 10
-
-int i_rand(int min, int max) 
+ 
+#define N 5
+ 
+int main()
 {
-  return rand() % (max - min + 1) + min; 
-} 
-
-int main(void) 
-{ 
-    srand(time(NULL)); 
-    int tab[ROZMIAR] = {0};
-    int *ptab;
+    int a[N];
+    int i = 0, j = 0;
+    int max, min;
     
-
-    printf("Wylosowane 10 liczb: \n");
-    for (int i = 0; i<=ROZMIAR; i++)
+    for( ; i < N; i++)
     {
-        tab[i] = i_rand(0, 100);
-        ptab = &tab[i];
-        printf("%d, adres: %p\n", tab[i], ptab);
+        printf("Введите A%d..\n", i + 1);
+        scanf("%d", &a[i]);
     }
-
-    int max = 0;
-    for (int i = 0; i <= ROZMIAR; i++)
+    
+    a[0] += a[N-1];
+    a[N-1] = a[0] - a[N-1];
+    a[0] -= a[N-1];
+    
+    max = a[0];
+    min = a[0];
+    for(i = 0; i < N; i++)
     {
-        if (tab[i] > max)
-        {
-            max = tab[i];
-        }
-    }  
-    ptab =&max;
-    printf("\n");
-    printf("Najwiekszy element jest rowny %d i znajduje sie pod adresem: %p\n", *ptab, ptab);
-
-    int *pmin;
-    int min;
-    for (int j = 0; j <= ROZMIAR; j++){
-        if (min > tab[j])
-        {
-            min = tab[j];
-        }
+        if(a[i] > max)
+            max = a[i];
+        if(a[i] < min)
+            min = a[i];
     }
-    pmin=&min;  
-    printf("Najmniejszy element jest rowny %d i znajduje sie pod adresem: %p\n", *pmin, pmin);
-  
-  return 0; 
+    
+    
+    printf("\nMax: %d\nMin:%d\n", max, min);
+    
+    return 0;
 }
