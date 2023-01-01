@@ -32,11 +32,16 @@ int main()
     int a[N] = {0};
     int i = 0, j = 0;
     int max, min;
+    int *ptab;
+    int *pmin, *pmax;
+    
     
     for( ; i < N; i++)
     {
         a[i] = i_rand(0, 100);
-        printf("tab[%d] - %d\n", i, a[i]);
+        ptab = &a[i];
+        printf("tab[%d] - %d, adres %p\n", i+1, a[i], ptab);
+        
     }
     
     a[0] += a[N-1];
@@ -45,16 +50,36 @@ int main()
     
     max = a[0];
     min = a[0];
-    for(i = 0; i < N; i++)
+    for(j = 0; j < N; j++)
     {
-        if(a[i] > max)
-            max = a[i];
-        if(a[i] < min)
-            min = a[i];
+        if(a[j] > max)
+        {
+            max = a[j];
+            pmax = &a[j];
+        }
+        else if(a[j] < min)
+        {
+            min = a[j];
+            pmin = &a[j];
+        }
     }
     
-    
+    printf("%p\n %p\n", pmax, pmin);
     printf("\nMax: %d\nMin:%d\n", max, min);
     
     return 0;
 }
+
+/*
+tab[1] - 41, adres 0x16d9af350
+tab[2] - 65, adres 0x16d9af354
+tab[3] - 31, adres 0x16d9af358
+tab[4] - 41, adres 0x16d9af35c
+tab[5] - 19, adres 0x16d9af360
+
+0x16d9af354
+0x100
+
+Max: 65
+Min:19
+*/
