@@ -16,70 +16,74 @@
     29, adres: 0x7ffdfe793784
     Najmniejszy element jest rowny 22 i znajduje sie pod adresem: 0x7ffdfe793774
 */
+/*
+    Napisz program, który znajduje wskaźnik do najmniejszego elementu tablicy dziesięciu losowych liczb 
+    całkowitych z zakresu [0, 100] (instrukcja rand()%101). W tym programie nie można deklarować innych 
+    zmiennych niż wskaźniki (nazwa tablicy też jest wskaźnikiem).
+    Dla każdego elementu tablicy wypisz jego wartość i adres. Po znalezieniu wskaźnika do najmniejszego
+    elementu również wypisz wartość tego elementu oraz jego adres, np.:
+    70, adres: 0x7ffdfe793760
+    91, adres: 0x7ffdfe793764
+    90, adres: 0x7ffdfe793768
+    55, adres: 0x7ffdfe79376c
+    66, adres: 0x7ffdfe793770
+    22, adres: 0x7ffdfe793774 
+    47, adres: 0x7ffdfe793778
+    42, adres: 0x7ffdfe79377c
+    67, adres: 0x7ffdfe793780
+    29, adres: 0x7ffdfe793784
+    Najmniejszy element jest rowny 22 i znajduje sie pod adresem: 0x7ffdfe793774
+*/
 #include <stdio.h> 
 #include <stdlib.h>
 #include <time.h> 
- 
-#define N 5
- 
-int i_rand(int min, int max) 
+
+#define ROZMIAR 10
+
+int i_rand(int min, int max) //finkcja losowania liczb;   
 {
-  return rand() % (max - min + 1) + min; 
+  return rand() % (max - min + 1) + min;  
 } 
 
-int main()
-{
-    int a[N] = {0};
-    int i = 0, j = 0;
-    int max, min;
+int main(void) //finkcja main;
+{ 
+    srand(time(NULL)); 
+    int tab[ROZMIAR] = {0};
     int *ptab;
-    int *pmin, *pmax;
     
-    
-    for( ; i < N; i++)
+    printf("Wylosowane 10 liczb: \n");
+    for (int i = 0; i<=ROZMIAR; i++)
     {
-        a[i] = i_rand(0, 100);
-        ptab = &a[i];
-        printf("tab[%d] - %d, adres %p\n", i+1, a[i], ptab);
-        
+        tab[i] = i_rand(0, 100);
+        ptab = &tab[i];
+        printf("%d, adres: %p\n", tab[i], ptab);
     }
-    
-    a[0] += a[N-1];
-    a[N-1] = a[0] - a[N-1];
-    a[0] -= a[N-1];
-    
-    max = a[0];
-    min = a[0];
-    for(j = 0; j < N; j++)
+
+    int *pmax;
+    int max;
+    for (int i = 0; i <= ROZMIAR; i++)
     {
-        if(a[j] > max)
+        if (tab[i] > max)
         {
-            max = a[j];
-            pmax = &a[j];
+            max = tab[i];
+            pmax = &max;
         }
-        else if(a[j] < min)
+    }  
+    printf("\n");
+    printf("Najwiekszy element jest rowny %d i znajduje sie pod adresem: %p\n", max, pmax);
+
+
+    int *pmin;
+    int min;
+    for (int j = 0; j < ROZMIAR; j++)
+    {
+        if (min > tab[j])
         {
-            min = a[j];
-            pmin = &a[j];
+            min = tab[j];
+            //pmin = &min;
         }
     }
-    
-    printf("%p\n %p\n", pmax, pmin);
-    printf("\nMax: %d\nMin:%d\n", max, min);
-    
-    return 0;
+    printf("Najmniejszy element jest rowny %d i znajduje sie pod adresem: %p\n", min, pmin);
+  
+    return 0; 
 }
-
-/*
-tab[1] - 41, adres 0x16d9af350
-tab[2] - 65, adres 0x16d9af354
-tab[3] - 31, adres 0x16d9af358
-tab[4] - 41, adres 0x16d9af35c
-tab[5] - 19, adres 0x16d9af360
-
-0x16d9af354
-0x100
-
-Max: 65
-Min:19
-*/
