@@ -13,39 +13,38 @@ matematycznej: pow(2, k). Funkcja ta wymaga kompilacji programu z opcją -lm
 W main() przetestuj kolejno działanie swoich trzech funkcji, przekazując do nich wskaźnik do pierwszego elementu tablicy tab.
 
 Przykładowy efekt uruchomienia programu:
-      Wylosowano: 1100
-      Wylosowana liczba binarna w U1 ma wartosc dziesietna: -3
+Wylosowano: 1100 
+Wylosowana liczba binarna w U1 ma wartosc dziesietna: -3
 */
 
 #include <stdio.h> 
 #include <stdlib.h>
 #include <time.h> 
-#include <math.h>
-
-int c_rand(char min, char max) 
-{
-  return rand() % (max - min + 1) + min; 
-} 
+#include <math.h> // gcc -g -Wall -lm
 
 void losuj(char *tab, int n)
 {
-    n = sizeof(*tab)/sizeof(char);
     for(int i=0; i<n; i++)
     {
-        *tab[i] = c_rand(0, 1);
+        tab[i] = '0'+rand()%2;
     }
     return;
 }
 
-
-void dzisietnyzapis(char *tab)
+int dzisietnyzapis(char *tab, int n)
 {
-    int Suma = 0;
-    for(int i=0; i<(sizeof(*tab)/sizeof(char)); i++)
+    int suma = 0;
+    for(int i=(n-1); i>0; i--)
     {
-        suma += suma + pow(2, i);
+        suma += (tab[i] - '0') * pow(2, n-1-i);
+    }
+    
+    if(tab[0] - '0' == 1)
+    {
+        suma += (-pow(2, n-1))+1;
     }
 
+    return suma;
 }
 
 void pisz(char *tab)
@@ -53,17 +52,14 @@ void pisz(char *tab)
     printf("%s",tab);
 }
 
-
 int main() 
 {
+    srand(time(NULL)); 
     char tab[] = "0000";
-    char *ptab;
-    ptab = tab;
-    printf("Rozmiar tab: %lu\n", (sizeof(tab)/sizeof(char)));
     
-    losuj(tab, (sizeof(tab)/sizeof(char)));//losowanie
+    losuj(tab, 4);//losowanie
     pisz(tab); //wypisywanie
-    
-    printf("\n");
+    printf("\nWylosowana liczba binarna w U1 ma wartosc dziesietna: %d\n", dzisietnyzapis(tab, 4));
+
     return 0;
 }
