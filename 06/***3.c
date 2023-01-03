@@ -16,57 +16,46 @@
     29, adres: 0x7ffdfe793784
     Najmniejszy element jest rowny 22 i znajduje sie pod adresem: 0x7ffdfe793774
 */
-
 #include <stdio.h> 
 #include <stdlib.h>
 #include <time.h> 
 
 #define ROZMIAR 10
 
-int i_rand(int min, int max) //finkcja losowania liczb;   
-{
-  return rand() % (max - min + 1) + min;  
-} 
-
 int main(void) //finkcja main;
 { 
     srand(time(NULL)); 
     int tab[ROZMIAR] = {0};
-    int *ptab;
     
     printf("Wylosowane 10 liczb: \n");
-    for (int i = 0; i<=ROZMIAR; i++)
+    for (int i = 0; i<ROZMIAR; i++)
     {
-        tab[i] = i_rand(0, 100);
-        ptab = &tab[i];
-        printf("%d, adres: %p\n", tab[i], ptab);
+        tab[i] = rand()%101;
+        printf("%d, adres: %p\n", tab[i], &tab[i]);
     }
 
-    int *pmax;
-    int max;
-    for (int i = 0; i <= ROZMIAR; i++)
+    int *pmax = &tab[0];
+    for (int i = 0; i < ROZMIAR; i++)
     {
-        if (tab[i] > max)
+        if (tab[i] > *pmax)
         {
-            max = tab[i];
-            pmax = &max;
+            pmax = (tab+i);  /////////// !!!
         }
     }  
-    printf("\n");
-    printf("Najwiekszy element jest rowny %d i znajduje sie pod adresem: %p\n", max, pmax);
+    printf("\nNajwiekszy element jest rowny %d i znajduje sie pod adresem: %p\n", *pmax, pmax);
 
 
-    int *pmin;
-    int min;
+    int *pmin = &tab[0];
     for (int j = 0; j < ROZMIAR; j++)
     {
-        if (min > tab[j])
+        if (*pmin > tab[j])
         {
-            min = tab[j];
-            //pmin = &min;
+            pmin = &tab[j];
         }
     }
-    printf("Najmniejszy element jest rowny %d i znajduje sie pod adresem: %p\n", min, pmin);
+    printf("Najmniejszy element jest rowny %d i znajduje sie pod adresem: %p\n", *pmin, pmin);
   
     return 0; 
 }
+
+
