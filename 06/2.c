@@ -25,7 +25,6 @@ int main ()
         literka[i] = rand()%26+'a';
         printf("%c ", literka[i]);
     }
-
     printf("\n");
     
     for(int i = 0; i<N; i++)
