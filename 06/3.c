@@ -22,7 +22,7 @@
 
 #define ROZMIAR 10
 
-int main(void) //finkcja main;
+int main(void)
 { 
     srand(time(NULL)); 
     int tab[ROZMIAR] = {0};
@@ -33,17 +33,6 @@ int main(void) //finkcja main;
         tab[i] = rand()%101;
         printf("%d, adres: %p\n", tab[i], &tab[i]);
     }
-
-    int *pmax = &tab[0];
-    for (int i = 0; i < ROZMIAR; i++)
-    {
-        if (tab[i] > *pmax)
-        {
-            pmax = (tab+i);  /////////// !!!
-        }
-    }  
-    printf("\nNajwiekszy element jest rowny %d i znajduje sie pod adresem: %p\n", *pmax, pmax);
-
 
     int *pmin = &tab[0];
     for (int j = 0; j < ROZMIAR; j++)
