@@ -15,7 +15,6 @@ następujący:
 
 Suma = -103.57, iloczyn = 20354119325664784.00, srednia = -9.42
 */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -27,7 +26,6 @@ double funkcja_1(double *p, double *k,int a, int b)
     {
         suma += *(p+i);
     }
-
     return suma;
 }
 
@@ -38,7 +36,6 @@ double funkcja_2(double *p, double *k,int a, int b)
     {
         iloczyn *= *(p+i);
     }
-
     return iloczyn;
 }
 
@@ -50,10 +47,8 @@ double funkcja_3(double *p, double *k,int a, int b)
         srednia += *(p+i);
     }
     srednia = srednia/(b-a+1);
-
     return srednia;
 }
-
 
 int main(int argc, char *argv[]) 
 {   
@@ -72,12 +67,9 @@ int main(int argc, char *argv[])
     printf("lancuch - %s\n", b);
     int liczba2 = (*b - '0')*10; //20
     printf("liczba - %d\n\n", liczba2);
-
+    
     printf("lewostronna granica - %f\n", tab[10]);
     printf("prawostronna granica - %f\n\n", tab[20]);
-    // [-9.00000; -90.00000] - granicy wykonowywania dzialan; 
-    printf("\n");
-
 
     double suma = funkcja_1((tab + liczba1),(tab + liczba2), liczba1, liczba2);
     printf("Suma elementow wynosi: %.2f\n", suma);
@@ -88,7 +80,6 @@ int main(int argc, char *argv[])
     double sriednia = funkcja_3((tab + liczba1),(tab + liczba2), liczba1, liczba2);
     printf("Sriednia suma elementow wynosi: %.2f\n", sriednia);
     
-
     printf("\n");
     return 0;
 }
