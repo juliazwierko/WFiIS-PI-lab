@@ -1,3 +1,4 @@
+/*
 Szyfr Cezara polega na zastąpieniu każdej litery z szyfrowanego tekstu inną, oddaloną od niej o k
 miejsc w alfabecie. Alfabet traktowany jest jako cykliczny, tzn. litera 'Z' szyfrowana przy k=2 zamieni
 się na 'B'.
@@ -32,3 +33,43 @@ się:
 Doucd ny jkcjipbygkxsk...
   
 Maksymalna liczba punktów do zdobycia: 6 + 3 dodatkowe
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(int argc, char *argv[]) 
+{   
+    //sprawdzanie wpisanej ilosci parametrow;
+    if (argc <= 2)
+    {
+        printf("Podano za malo parametrow wywolania!\n");
+        printf("Podaj liczbe k oraz lancuch do zaszyfrowania.");
+        return 0;
+    }
+    
+    //funkcje bibloteky;
+    int k = atoi(argv[1]);
+    printf("liczba wystapien - %d\n", k);
+    int n = strlen(argv[2]);
+    printf("Ilosc literek w slowie - %d\n\n", n);
+
+    char *w = argv[2];
+    for (int i = 0; i < n; i++)
+    {   
+        if(isspace(w[i]))
+        {   
+            for(int j = i; j < n; j++)
+            w[j]=w[j+1];
+            i--; 
+        }
+
+        char slowko = *(w+i);
+        slowko = slowko - n;
+        printf("%c", slowko);
+    }
+    printf("\n");
+    return 0;
+}
