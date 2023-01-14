@@ -40,9 +40,13 @@ Maksymalna liczba punktów do zdobycia: 6 + 3 dodatkowe
 #include <string.h>
 #include <ctype.h>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
 int main(int argc, char *argv[]) 
 {   
-    //sprawdzanie wpisanej ilosci parametrow;
     if (argc <= 2)
     {
         printf("Podano za malo parametrow wywolania!\n");
@@ -50,26 +54,48 @@ int main(int argc, char *argv[])
         return 0;
     }
     
-    //funkcje bibloteky;
     int k = atoi(argv[1]);
     printf("liczba wystapien - %d\n", k);
     int n = strlen(argv[2]);
     printf("Ilosc literek w slowie - %d\n\n", n);
 
-    char *w = argv[2];
-    for (int i = 0; i < n; i++)
+    char *w = argv[2]; 
+    int flag; //
+
+    for (int i = 0; i < n; i++) // n - rozmiar 
     {   
+        for (int j = 0; j < k; j++) // k - odejmowanie
+        {   
+            *w = *(w+i); 
+            if (*w == 'a')
+            {
+                *w = 'z' - j - 1;
+                //printf ("%c", *w);
+            }
+
+            *w = *w - j;
+            if (*w == 'a')
+            {
+                *w = 'z' - j - 1;
+                //printf ("%c", *w);
+            }
+            if (*w < 'a')
+            {
+                *w = 'z' - j;
+                //printf ("%c", *w);
+            }
+        printf ("%c", *w);
+        }
+        /*
         if(isspace(w[i]))
         {   
             for(int j = i; j < n; j++)
             w[j]=w[j+1];
             i--; 
         }
-
-        char slowko = *(w+i);
-        slowko = slowko - n;
-        printf("%c", slowko);
+        */
     }
+
     printf("\n");
     return 0;
 }
