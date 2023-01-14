@@ -58,16 +58,21 @@ int main(int argc, char *argv[])
 15.96, 12.62, 69.75, -13.13, 28.25, -68.60, -52.44, -79.75, 6.58, 76.88, 0.09, 18.91, 4.95,
 -35.28, -38.30, 60.57};
 
+    /*
     char *a = argv[1];
     printf("lancuch - %s\n", a);
     int liczba1 = (*a - '0')*10; //10
     printf("liczba - %d\n\n", liczba1);
-    
+    */
+    int liczba1 = atoi(argv[1]);
+    /*
     char *b = argv[2];
     printf("lancuch - %s\n", b);
     int liczba2 = (*b - '0')*10; //20
     printf("liczba - %d\n\n", liczba2);
-    
+    */
+    int liczba2 = atoi(argv[2]);
+
     printf("lewostronna granica - %f\n", tab[10]);
     printf("prawostronna granica - %f\n\n", tab[20]);
 
