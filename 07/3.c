@@ -19,35 +19,50 @@ Suma = -103.57, iloczyn = 20354119325664784.00, srednia = -9.42
 #include <stdlib.h>
 #include <string.h>
 
-double funkcja_1(double *p, double *k,int a, int b)
+//todo list
+//zmienic funkcja_1/2/3 na wersje bez a i b (done)
+//napisac funkcje oblicz (done)
+
+double f_suma(double *p, double *k)
 {   
     double suma = 0.;
-    for (int i = 0; i < (b-a)+1; i++)
+    double *ptr = p;
+    while (ptr != k)
     {
-        suma += *(p+i);
+        suma = suma + (*(ptr++));
     }
+    suma += *k;
+
     return suma;
 }
 
-double funkcja_2(double *p, double *k,int a, int b)
+double f_iloczyn(double *p, double *k)
 {   
     double iloczyn = 1.;
-    for (int i = 0; i < (b-a)+1; i++)
+    double *ptr = p;
+    while (ptr != k)
     {
-        iloczyn *= *(p+i);
+        iloczyn = iloczyn * (*(ptr++));
     }
+    iloczyn *= *k;
+
     return iloczyn;
 }
 
-double funkcja_3(double *p, double *k,int a, int b)
+double f_srednia(double *p, double *k)
 {   
-    double srednia = 0.;
-    for (int i = 0; i < (b-a+1); i++)
-    {
-        srednia += *(p+i);
-    }
-    srednia = srednia/(b-a+1);
+    double srednia = f_suma(p,k);
+    int roznica = (k-p+1);
+    srednia = srednia/roznica;
+
     return srednia;
+}
+
+void oblicz(double *p, double *k, double *suma, double *iloczyn, double *srednia)
+{
+    *suma = f_suma(p, k);
+    *iloczyn = f_iloczyn(p, k);
+    *srednia = f_srednia(p, k);
 }
 
 int main(int argc, char *argv[]) 
@@ -58,30 +73,12 @@ int main(int argc, char *argv[])
 15.96, 12.62, 69.75, -13.13, 28.25, -68.60, -52.44, -79.75, 6.58, 76.88, 0.09, 18.91, 4.95,
 -35.28, -38.30, 60.57};
 
-    if (argc <= 2)
-    {
-        printf("Podano za malo parametrow wywolania!\n");
-        return 0;
-    }
-    
-    int liczba1 = atoi(argv[1]);
-    int liczba2 = atoi(argv[2]);
-
-    printf("lewostronna granica - %f\n", tab[10]);
-    printf("prawostronna granica - %f\n\n", tab[20]);
-
-    double suma = funkcja_1((tab + liczba1),(tab + liczba2), liczba1, liczba2);
-    printf("Suma elementow wynosi: %.2f\n", suma);
-
-    double iloczyn = funkcja_2((tab + liczba1),(tab + liczba2), liczba1, liczba2);
-    printf("Iloczyn elementow wynosi: %.2f\n", iloczyn);
-    
-    double sriednia = funkcja_3((tab + liczba1),(tab + liczba2), liczba1, liczba2);
-    printf("Sriednia suma elementow wynosi: %.2f\n", sriednia);
-    
-    printf("\n");
+    double iloczyn, suma, srednia;
+    oblicz(tab+10, tab+20, &iloczyn, &suma, &srednia); // !!! ADRES
+    printf("suma - %.2f\niloczyn - %.2f\nsrednia - %.2f", suma, iloczyn, srednia);
     return 0;
 }
+
 
 /*
 OUTPUT #1
