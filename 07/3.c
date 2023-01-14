@@ -58,19 +58,13 @@ int main(int argc, char *argv[])
 15.96, 12.62, 69.75, -13.13, 28.25, -68.60, -52.44, -79.75, 6.58, 76.88, 0.09, 18.91, 4.95,
 -35.28, -38.30, 60.57};
 
-    /*
-    char *a = argv[1];
-    printf("lancuch - %s\n", a);
-    int liczba1 = (*a - '0')*10; //10
-    printf("liczba - %d\n\n", liczba1);
-    */
+    if (argc <= 2)
+    {
+        printf("Podano za malo parametrow wywolania!\n");
+        return 0;
+    }
+    
     int liczba1 = atoi(argv[1]);
-    /*
-    char *b = argv[2];
-    printf("lancuch - %s\n", b);
-    int liczba2 = (*b - '0')*10; //20
-    printf("liczba - %d\n\n", liczba2);
-    */
     int liczba2 = atoi(argv[2]);
 
     printf("lewostronna granica - %f\n", tab[10]);
@@ -88,3 +82,23 @@ int main(int argc, char *argv[])
     printf("\n");
     return 0;
 }
+
+/*
+OUTPUT #1
+terminal:
+./test1 10 20   
+
+lewostronna granica - -9.000000
+prawostronna granica - -90.990000
+
+Suma elementow wynosi: -103.57
+Iloczyn elementow wynosi: 20354119325664784.00
+Sriednia suma elementow wynosi: -9.42
+
+OUTPUT #2
+terminal:
+./test1 10 
+
+Podano za malo parametrow wywolania!
+*/
+
