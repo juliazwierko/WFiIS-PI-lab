@@ -39,14 +39,9 @@ Maksymalna liczba punktów do zdobycia: 6 + 3 dodatkowe
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
-/*
-        if(isspace(w[i]))
-        {   
-            for(int j = i; j < n; j++)
-            w[j]=w[j+1];
-            i--; 
-        }
-*/
+#include <ctype.h>
+
+
 
 int main(int argc, char *argv[]) 
 {   
@@ -58,40 +53,25 @@ int main(int argc, char *argv[])
     }
     
     int k = atoi(argv[1]);
-    printf("liczba wystapien - %d\n", k);
+    printf("liczba wystapien : %d\n", k);
     int n = strlen(argv[2]);
-    printf("Ilosc literek w slowie - %d\n\n", n);
+    printf("Ilosc literek w slowie : %d\n\n", n);
 
     char *w = argv[2]; 
-    int flag; //
 
     printf("Przed: %s\n", argv[2]);
     printf("Po: "); 
     for (int i = 0; i < n; i++) // n - rozmiar 
     {   
-        for (int j = 0; j < k; j++) // k - odejmowanie
-        {   
-            *w = *(w+i); 
-            *w = *w - j; 
-
-            if (*w == 'a')
-            {
-                *w = 'z' - j - j;
-                //printf ("%c", *w);
-            }
-
-            if (*w == 'a')
-            {
-                *w = 'z' - j - j;
-                //printf ("%c", *w);
-            }
-            if (*w < 'a')
-            {
-                *w = 'z' - j;
-                //printf ("%c", *w);
-            }
+        if(isspace(w[i]))
+        {
+            printf ("%c", w[i]);
+            continue;
         }
-        printf ("%c", *w);
+        
+        w[i] = ((w[i]-'a' + k) % 26) + 'a';
+
+        printf ("%c", w[i]);
     }
 
     printf("\n");
