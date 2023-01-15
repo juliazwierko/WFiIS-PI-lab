@@ -41,8 +41,6 @@ Maksymalna liczba punktów do zdobycia: 6 + 3 dodatkowe
 #include <string.h>
 #include <ctype.h>
 
-
-
 int main(int argc, char *argv[]) 
 {   
     if (argc <= 2)
