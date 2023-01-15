@@ -59,6 +59,8 @@ int main(int argc, char *argv[])
 
     printf("Przed: %s\n", argv[2]);
     printf("Po: "); 
+
+    
     for (int i = 0; i < n; i++) // n - rozmiar 
     {   
         if(isspace(w[i]))
@@ -67,9 +69,17 @@ int main(int argc, char *argv[])
             continue;
         }
         
-        w[i] = ((w[i]-'a' + k) % 26) + 'a';
+        if(islower(w[i]))
+        {
+            w[i] = ((w[i]-'a' + k) % 26) + 'a';
+            printf ("%c", w[i]);
+        }
 
-        printf ("%c", w[i]);
+        if( isupper(w[i]))
+        {
+            w[i] = ((w[i]-'A' + k) % 26) + 'A';
+            printf ("%c", w[i]);
+        }
     }
 
     printf("\n");
