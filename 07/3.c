@@ -19,10 +19,6 @@ Suma = -103.57, iloczyn = 20354119325664784.00, srednia = -9.42
 #include <stdlib.h>
 #include <string.h>
 
-//todo list
-//zmienic funkcja_1/2/3 na wersje bez a i b (done)
-//napisac funkcje oblicz (done)
-
 double f_suma(double *p, double *k)
 {   
     double suma = 0.;
