@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     char *str = argv[1]; //cos345
     
     str = (str + 4);
-    //printf("%s\n", str);  Wypisanie na output: 345;
+    //printf("%s\n", str);  W output bedzie wypisane: 345);
     
     double x = atof(str); //przeksztalcenie w liczbu;
     printf("Funkcja bedzie wykonanan dla kata rownego: %f\n", x); 
